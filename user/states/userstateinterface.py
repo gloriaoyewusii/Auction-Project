@@ -3,9 +3,6 @@ from abc import ABC
 
 class UserStateInterface(ABC):
 
-    def __init__(self, user):
-        self.user = user
-
     def sign_in(self):
         pass
     def sign_in_successful(self):
@@ -13,4 +10,12 @@ class UserStateInterface(ABC):
     def sign_in_processing(self):
         pass
     def sign_in_failed(self):
+        pass
+    def sign_out(self):
+        pass
+    def sign_out_processing(self):
+        pass
+    def sign_out_successful(self):
+        pass
+    def sign_out_failed(self):
         pass

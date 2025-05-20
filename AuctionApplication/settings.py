@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -76,7 +77,7 @@ WSGI_APPLICATION = 'AuctionApplication.wsgi.application'
 DATABASES = {
 'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'shopwonderhaven_db',
+        'NAME': 'auction_db',
         'USER': 'postgres',
         'PASSWORD': 'secure123',
         'HOST': 'localhost',
@@ -129,3 +130,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'user.UserModel'
