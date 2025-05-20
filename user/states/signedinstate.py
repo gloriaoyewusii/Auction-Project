@@ -1,3 +1,4 @@
+from user.states.signedoutstate import SignedOutState
 from user.states.userstateinterface import UserStateInterface
 from user.user_context import UserContext
 
@@ -7,18 +8,25 @@ class SignedInState(UserStateInterface):
         self.user = user
 
     def sign_in(self):
-        pass
+        self.user.change_state(SignedOutState(self.user))
+
     def sign_in_processing(self):
-        pass
+        self.user.state = SignedOutState(self.user)
+
     def sign_in_successful(self):
-        pass
+        self.user.state = SignedInState(self.user)
+
     def sign_in_failed(self):
-        pass
+        self.user.state = SignedOutState(self.user)
+
     def sign_out(self):
-        pass
+        self.user.state = SignedInState(self.user)
+
     def sign_out_processing(self):
-        pass
+        self.user.state = SignedInState(self.user)
+
     def sign_out_successful(self):
-        pass
+        self.user.state = SignedOutState(self.user)
+
     def sign_out_failed(self):
-        pass
+        self.user.state = SignedInState(self.user)
