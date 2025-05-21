@@ -3,7 +3,7 @@ from abc import ABC
 
 class UserStateInterface(ABC):
 
-    def sign_in(self):
+    def sign_in(self, user_data):
         pass
     def sign_in_successful(self):
         pass
